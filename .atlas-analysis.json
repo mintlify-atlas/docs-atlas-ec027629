@@ -1,0 +1,77 @@
+{
+  "projectType": "ai-ml",
+  "projectName": "Valentine",
+  "projectDescription": "An autonomous multi-agent AI assistant that runs on Telegram, using a pool of 8 specialized agents coordinated over Redis Streams with free-tier LLM providers.",
+  "theme": "palm",
+  "primaryColor": "#1c1c1c",
+  "lightColor": null,
+  "darkColor": null,
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": ["introduction", "quickstart", "configuration"]
+          },
+          {
+            "group": "Architecture",
+            "pages": ["architecture/overview", "architecture/agents", "architecture/message-flow", "architecture/llm-providers"]
+          },
+          {
+            "group": "Agents",
+            "pages": ["agents/zeroclaw", "agents/oracle", "agents/codesmith", "agents/iris", "agents/echo", "agents/browser", "agents/cortex", "agents/nexus"]
+          },
+          {
+            "group": "Core Systems",
+            "pages": ["core/memory", "core/skills", "core/mcp", "core/autonomy", "core/scheduling", "core/security"]
+          },
+          {
+            "group": "Telegram Commands",
+            "pages": ["telegram/commands"]
+          },
+          {
+            "group": "Deployment",
+            "pages": ["deployment/oracle-cloud", "deployment/systemd", "deployment/docker"]
+          },
+          {
+            "group": "Development",
+            "pages": ["development/setup", "development/testing"]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "8 specialized autonomous agents (Oracle, CodeSmith, Iris, Echo, Browser, Cortex, Nexus, ZeroClaw)",
+    "Multi-provider LLM fallback chain (Groq, Cerebras, SambaNova — all free tier)",
+    "Persistent memory via Mem0 + Qdrant vector database",
+    "Telegram bot interface with rich command set",
+    "Redis Streams for inter-agent communication",
+    "MCP (Model Context Protocol) tool integration",
+    "Dynamic skill installation from git repos or shell scripts",
+    "Headless web browsing via Playwright",
+    "Voice transcription (Whisper) and TTS (Edge TTS)",
+    "Process isolation: each agent runs as its own OS process with auto-restart"
+  ],
+  "publicApiSurface": [
+    "BaseAgent.process_task(task: AgentTask) -> TaskResult",
+    "BaseAgent.listen_for_tasks()",
+    "BaseAgent.startup() / shutdown()",
+    "ZeroClawRouter — intent classification and agent dispatch",
+    "OracleAgent — chat, research, web search",
+    "CodeSmithAgent — code generation, shell execution, GitHub ops",
+    "IrisAgent — image analysis and generation",
+    "EchoAgent — voice transcription and TTS",
+    "BrowserAgent — headless Chromium automation",
+    "CortexAgent — persistent memory read/write",
+    "NexusAgent — weather, crypto, MCP tool dispatch",
+    "RedisBus — message bus (streams, pub/sub, conversation history)",
+    "FallbackChain — multi-provider LLM with automatic failover",
+    "SkillsManager — dynamic skill install and execution",
+    "ToolRegistry — shared tool registry across agents",
+    "ProcessSupervisor — agent process lifecycle management",
+    "GET /health — JSON health check endpoint"
+  ]
+}
